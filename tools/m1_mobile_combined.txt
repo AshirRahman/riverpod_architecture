@@ -1,0 +1,1974 @@
+# M1 Mobile Flutter Boilerplate – Full Code Export
+Generated: 2026-01-25T16:30:41.531117
+
+=========================================
+📂 PROJECT STRUCTURE
+=========================================
+
+├── .env
+├── .env.example
+├── .flutter-plugins-dependencies
+├── .metadata
+├── README.md
+├── analysis_options.yaml
+├── 
+│   ├── 
+│   └── 
+├── 
+│   ├── app.dart
+│   ├── 
+│   │   ├── 
+│   │   │   ├── app_bootstrap.dart
+│   │   │   └── dependency_injection.dart
+│   │   ├── 
+│   │   │   ├── app_config.dart
+│   │   │   ├── env.dart
+│   │   │   └── supabase_config.dart
+│   │   ├── 
+│   │   │   ├── app_colors.dart
+│   │   │   ├── app_strings.dart
+│   │   │   └── constants.dart
+│   │   ├── 
+│   │   │   ├── error_handler.dart
+│   │   │   └── failures.dart
+│   │   ├── 
+│   │   │   ├── extensions.dart
+│   │   │   └── validators.dart
+│   │   ├── 
+│   │   │   ├── app_localizations.dart
+│   │   │   └── 
+│   │   │       ├── en.arb
+│   │   │       └── ko.arb
+│   │   ├── 
+│   │   │   ├── api_client.dart
+│   │   │   ├── network_info.dart
+│   │   │   └── request_result.dart
+│   │   ├── 
+│   │   │   ├── app_router.dart
+│   │   │   └── app_routes.dart
+│   │   ├── 
+│   │   │   ├── branch_service.dart
+│   │   │   ├── firebase_service.dart
+│   │   │   ├── local_auth_service.dart
+│   │   │   ├── storage_service.dart
+│   │   │   └── supabase_service.dart
+│   │   ├── 
+│   │   │   ├── auth_guard.dart
+│   │   │   └── session_manager.dart
+│   │   ├── 
+│   │   │   └── app_theme.dart
+│   │   └── 
+│   │       └── logger.dart
+│   ├── 
+│   │   ├── 
+│   │   │   ├── sample_entity.dart
+│   │   │   └── user_entity.dart
+│   │   ├── 
+│   │   │   ├── auth_repository.dart
+│   │   │   └── sample_repository.dart
+│   │   └── 
+│   │       ├── 
+│   │       │   ├── login_usecase.dart
+│   │       │   ├── logout_usecase.dart
+│   │       │   └── signup_usecase.dart
+│   │       └── 
+│   │           └── sample_usecase.dart
+│   ├── 
+│   │   ├── 
+│   │   │   ├── 
+│   │   │   │   └── auth_form_model.dart
+│   │   │   ├── 
+│   │   │   │   └── auth_provider.dart
+│   │   │   ├── 
+│   │   │   │   ├── login_screen.dart
+│   │   │   │   ├── signup_screen.dart
+│   │   │   │   ├── splash_screen.dart
+│   │   │   │   └── verify_email_screen.dart
+│   │   │   └── 
+│   │   │       ├── auth_text_field.dart
+│   │   │       └── social_login_button.dart
+│   │   ├── 
+│   │   │   ├── 
+│   │   │   │   └── realtime_notifier.dart
+│   │   │   └── 
+│   │   │       └── realtime_screen.dart
+│   │   ├── 
+│   │   │   ├── 
+│   │   │   │   └── sample_model.dart
+│   │   │   ├── 
+│   │   │   │   └── sample_notifier.dart
+│   │   │   ├── 
+│   │   │   │   ├── sample_detail_screen.dart
+│   │   │   │   ├── sample_form_screen.dart
+│   │   │   │   └── sample_list_screen.dart
+│   │   │   └── 
+│   │   │       └── sample_list_tile.dart
+│   │   └── 
+│   │       ├── 
+│   │       │   └── settings_provider.dart
+│   │       ├── 
+│   │       │   └── settings_screen.dart
+│   │       └── 
+│   │           └── settings_tile.dart
+│   └── main.dart
+├── pubspec.lock
+├── pubspec.yaml
+├── 
+│   ├── combine-files.dart
+│   ├── combine-selected-modules.dart
+│   ├── combined-selected-modules.txt
+│   └── riverpod_combined.txt
+
+
+=========================================
+📦 SOURCE FILES
+=========================================
+
+============================================================
+FILE: .env.example
+TYPE: Dart Source File
+SIZE: 0.10 KB
+============================================================
+
+APP_ENV=development
+SUPABASE_URL=https://xxxx.supabase.co
+SUPABASE_ANON_KEY=xxxx
+BRANCH_IO_KEY=xxxx
+
+============================================================
+
+
+============================================================
+FILE: .gitignore
+TYPE: Dart Source File
+SIZE: 0.73 KB
+============================================================
+
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+============================================================
+
+
+============================================================
+FILE: README.md
+TYPE: Documentation
+SIZE: 0.80 KB
+============================================================
+
+# M1 Mobile Boilerplate
+
+Generic, reusable Flutter architecture for future projects.
+
+## Tech Stack
+- Flutter (One-Source iOS/Android)
+- Riverpod (state management)
+- GoRouter (navigation)
+- Supabase (Auth/DB/Storage/Realtime)
+- Firebase (FCM, Analytics, Crashlytics)
+- Branch.io (deep linking & attribution)
+- LocalAuth (biometrics)
+
+## Setup
+1. `flutter pub get`
+2. Copy `.env.example` → `.env` and fill keys
+3. Run `flutter run --flavor development` (add flavors if needed)
+
+## Adding New Feature
+1. Copy `features/sample_crud` folder → rename
+2. Create domain entities/usecases/repositories
+3. Implement repository in data/
+4. Add providers & screens
+5. Add routes in `core/routes/app_routes.dart`
+
+## Testing
+Tests are structured parallel to lib/. Use mocktail for mocks.
+
+Happy coding!
+
+============================================================
+
+
+============================================================
+FILE: analysis_options.yaml
+TYPE: Dart Source File
+SIZE: 1.41 KB
+============================================================
+
+# This file configures the analyzer, which statically analyzes Dart code to
+# check for errors, warnings, and lints.
+#
+# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
+# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
+# invoked from the command line by running `flutter analyze`.
+
+# The following line activates a set of recommended lints for Flutter apps,
+# packages, and plugins designed to encourage good coding practices.
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  # The lint rules applied to this project can be customized in the
+  # section below to disable rules from the `package:flutter_lints/flutter.yaml`
+  # included above or to enable additional rules. A list of all available lints
+  # and their documentation is published at https://dart.dev/lints.
+  #
+  # Instead of disabling a lint rule for the entire project in the
+  # section below, it can also be suppressed for a single line of code
+  # or a specific dart file by using the `// ignore: name_of_lint` and
+  # `// ignore_for_file: name_of_lint` syntax on the line or in the file
+  # producing the lint.
+  rules:
+    # avoid_print: false  # Uncomment to disable the `avoid_print` rule
+    # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
+
+============================================================
+
+
+============================================================
+FILE: lib\app.dart
+TYPE: Dart Source File
+SIZE: 1.10 KB
+============================================================
+
+// riverpod/lib/app.dart
+import 'package:riverpod/core/routes/app_router.dart';
+import 'package:riverpod/core/theme/app_theme.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:riverpod/core/localization/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+class App extends ConsumerWidget {
+  const App({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final router = ref.watch(appRouterProvider);
+
+    return MaterialApp.router(
+      routerConfig: router,
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ko'),
+      ],
+      localeResolutionCallback: (locale, supportedLocales) {
+        return supportedLocales.first;
+      },
+    );
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\bootstrap\app_bootstrap.dart
+TYPE: Dart Source File
+SIZE: 0.43 KB
+============================================================
+
+// riverpod/lib/core/bootstrap/app_bootstrap.dart
+import 'package:riverpod/core/services/firebase_service.dart';
+import 'package:riverpod/core/services/supabase_service.dart';
+import 'package:riverpod/core/services/branch_service.dart';
+
+class AppBootstrap {
+  static Future<void> initialize() async {
+    await SupabaseService.initialize();
+    await FirebaseService.initialize();
+    await BranchService.initialize();
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\bootstrap\dependency_injection.dart
+TYPE: Dart Source File
+SIZE: 1.02 KB
+============================================================
+
+// riverpod/lib/core/bootstrap/dependency_injection.dart
+import 'package:riverpod/core/services/supabase_service.dart';
+import 'package:riverpod/core/services/firebase_service.dart';
+import 'package:riverpod/core/services/branch_service.dart';
+import 'package:riverpod/core/services/local_auth_service.dart';
+import 'package:riverpod/core/services/storage_service.dart';
+import 'package:riverpod/core/session/session_manager.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final supabaseServiceProvider = Provider<SupabaseService>((ref) => SupabaseService.instance);
+final firebaseServiceProvider = Provider<FirebaseService>((ref) => FirebaseService.instance);
+final branchServiceProvider = Provider<BranchService>((ref) => BranchService.instance);
+final localAuthServiceProvider = Provider<LocalAuthService>((ref) => LocalAuthService());
+final storageServiceProvider = Provider<StorageService>((ref) => StorageService());
+final sessionManagerProvider = Provider<SessionManager>((ref) => SessionManager(ref));
+
+============================================================
+
+
+============================================================
+FILE: lib\core\config\app_config.dart
+TYPE: Dart Source File
+SIZE: 0.18 KB
+============================================================
+
+// riverpod/lib/core/config/app_config.dart
+class AppConfig {
+  static const String appName = 'M1 Mobile';
+  static const String version = '1.0.0';
+  // Add feature flags if needed
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\config\env.dart
+TYPE: Dart Source File
+SIZE: 0.79 KB
+============================================================
+
+// lib/core/config/env.dart
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+enum AppFlavor { dev, staging, prod }
+
+class Env {
+  static late AppFlavor flavor;
+
+  static Future<void> load(AppFlavor appFlavor) async {
+    flavor = appFlavor;
+
+    switch (appFlavor) {
+      case AppFlavor.dev:
+        await dotenv.load(fileName: '.env.dev');
+        break;
+
+      case AppFlavor.staging:
+        await dotenv.load(fileName: '.env.staging');
+        break;
+
+      case AppFlavor.prod:
+        await dotenv.load(fileName: '.env.prod');
+        break;
+    }
+  }
+
+  static String get supabaseUrl => dotenv.env['SUPABASE_URL'] ?? '';
+  static String get supabaseAnonKey => dotenv.env['SUPABASE_ANON_KEY'] ?? '';
+  static String get branchKey => dotenv.env['BRANCH_IO_KEY'] ?? '';
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\config\supabase_config.dart
+TYPE: Dart Source File
+SIZE: 0.21 KB
+============================================================
+
+// riverpod/lib/core/config/supabase_config.dart
+import 'package:riverpod/core/config/env.dart';
+
+class SupabaseConfig {
+  static String url = Env.supabaseUrl;
+  static String anonKey = Env.supabaseAnonKey;
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\constants\app_colors.dart
+TYPE: Dart Source File
+SIZE: 0.20 KB
+============================================================
+
+// riverpod/lib/core/constants/app_colors.dart
+import 'package:flutter/material.dart';
+
+class AppColors {
+  static const Color primary = Colors.blue;
+  static const Color background = Colors.white;
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\constants\app_strings.dart
+TYPE: Dart Source File
+SIZE: 0.15 KB
+============================================================
+
+// riverpod/lib/core/constants/app_strings.dart
+class AppStrings {
+  static const String login = 'Login';
+  static const String signup = 'Sign Up';
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\constants\constants.dart
+TYPE: Dart Source File
+SIZE: 0.08 KB
+============================================================
+
+// riverpod/lib/core/constants/constants.dart
+// Barrel file or additional constants
+
+============================================================
+
+
+============================================================
+FILE: lib\core\errors\error_handler.dart
+TYPE: Dart Source File
+SIZE: 0.76 KB
+============================================================
+
+import 'package:dio/dio.dart';
+import 'package:riverpod/core/errors/failures.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+Failure handleError(dynamic error) {
+  if (error is DioException) {
+    if (error.type == DioExceptionType.connectionError) {
+      return const Failure('No internet connection');
+    }
+    if (error.response?.statusCode == 401) {
+      return const Failure('Unauthorized request');
+    }
+    return const Failure('Server error occurred');
+  }
+
+  if (error is AuthException) {
+    if (error.message.contains('Invalid login credentials')) {
+      return const Failure('Wrong email or password');
+    }
+    return Failure(error.message);
+  }
+
+  return const Failure('Something went wrong. Please try again.');
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\errors\failures.dart
+TYPE: Dart Source File
+SIZE: 0.12 KB
+============================================================
+
+// riverpod/lib/core/errors/failure.dart
+class Failure {
+  final String message;
+  const Failure(this.message);
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\helpers\extensions.dart
+TYPE: Dart Source File
+SIZE: 0.14 KB
+============================================================
+
+// riverpod/lib/core/helpers/extensions.dart
+extension StringExtension on String? {
+  bool get isNullOrEmpty => this == null || this!.isEmpty;
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\helpers\validators.dart
+TYPE: Dart Source File
+SIZE: 0.15 KB
+============================================================
+
+// riverpod/lib/core/helpers/validators.dart
+bool isValidEmail(String email) {
+  return RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(email);
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\localization\app_localizations.dart
+TYPE: Dart Source File
+SIZE: 0.75 KB
+============================================================
+
+// riverpod/lib/core/localization/app_localizations.dart
+import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/intl.dart';
+
+class AppLocalizations {
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
+
+  // Add translations here or load from ARB
+}
+
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
+  const _AppLocalizationsDelegate();
+
+  @override
+  bool isSupported(Locale locale) => ['en', 'ko'].contains(locale.languageCode);
+
+  @override
+  Future<AppLocalizations> load(Locale locale) async => AppLocalizations();
+
+  @override
+  bool shouldReload(_AppLocalizationsDelegate old) => false;
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\localization\locales\en.arb
+TYPE: Localization
+SIZE: 0.10 KB
+============================================================
+
+// riverpod/lib/core/localization/locales/en.arb
+{
+  "appName": "M1 Mobile",
+  "login": "Login"
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\localization\locales\ko.arb
+TYPE: Localization
+SIZE: 0.09 KB
+============================================================
+
+// riverpod/lib/core/localization/locales/ko.arb
+{
+  "appName": "M1 모바일",
+  "login": "로그인"
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\network\api_client.dart
+TYPE: Dart Source File
+SIZE: 0.13 KB
+============================================================
+
+// riverpod/lib/core/network/api_client.dart
+import 'package:dio/dio.dart';
+
+class ApiClient {
+  static final Dio dio = Dio();
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\network\network_info.dart
+TYPE: Dart Source File
+SIZE: 0.31 KB
+============================================================
+
+// riverpod/lib/core/network/network_info.dart
+import 'package:connectivity_plus/connectivity_plus.dart';
+
+class NetworkInfo {
+  static Future<bool> get isConnected async {
+    final connectivityResult = await Connectivity().checkConnectivity();
+    return connectivityResult != ConnectivityResult.none;
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\network\request_result.dart
+TYPE: Dart Source File
+SIZE: 0.32 KB
+============================================================
+
+// riverpod/lib/core/network/request_result.dart
+sealed class RequestResult<T> {
+  const RequestResult();
+}
+
+class Success<T> extends RequestResult<T> {
+  final T data;
+  const Success(this.data);
+}
+
+class FailureResult<T> extends RequestResult<T> {
+  final String message;
+  const FailureResult(this.message);
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\routes\app_router.dart
+TYPE: Dart Source File
+SIZE: 2.64 KB
+============================================================
+
+// riverpod/lib/core/routes/app_router.dart
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod/core/bootstrap/dependency_injection.dart'; // Import for sessionManagerProvider
+import 'package:riverpod/core/routes/app_routes.dart';
+
+// Import your actual screens
+// import 'package:riverpod/features/auth/screens/login_screen.dart';
+// import 'package:riverpod/features/auth/screens/signup_screen.dart';
+// import 'package:riverpod/features/auth/screens/splash_screen.dart';
+// // Note: You may need to create a dummy HomeScreen if you haven't yet, or use SampleListScreen
+// import 'package:riverpod/features/sample_crud/screens/sample_list_screen.dart'; 
+
+final appRouterProvider = Provider<GoRouter>((ref) {
+  // 1. Watch the SessionManager so we can react to changes
+  final session = ref.watch(sessionManagerProvider);
+
+  return GoRouter(
+    initialLocation: AppRoutes.splash,
+    // 2. IMPORTANT: This makes the router "listen" to auth changes
+    refreshListenable: session, 
+
+    // 3. Redirect Logic (Guard)
+    redirect: (context, state) {
+      final isLoggedIn = session.isLoggedIn;
+      final isLoggingIn = state.matchedLocation == AppRoutes.login || 
+                          state.matchedLocation == AppRoutes.signup;
+      final isSplash = state.matchedLocation == AppRoutes.splash;
+
+      // Allow splash to finish its job (Splash screen usually handles its own navigation, 
+      // but strictly speaking, if we are on splash, we might want to wait. 
+      // For this logic, we rely on the Splash screen to push to /login or /home, 
+      // OR we can let this redirect handler do it immediately.)
+      
+      // Strict Guard:
+      if (!isLoggedIn && !isLoggingIn && !isSplash) {
+        return AppRoutes.login;
+      }
+      
+      if (isLoggedIn && isLoggingIn) {
+        return AppRoutes.home;
+      }
+
+      return null;
+    },
+
+    routes: [
+      // Splash Route
+      GoRoute(
+        path: AppRoutes.splash,
+        // builder: (context, state) => const SplashScreen(),
+      ),
+      
+      // Login Route
+      GoRoute(
+        path: AppRoutes.login,
+        // builder: (context, state) => const LoginScreen(),
+      ),
+      
+      // Signup Route
+      GoRoute(
+        path: AppRoutes.signup,
+        // builder: (context, state) => const SignupScreen(),
+      ),
+      
+      // Home Route (Protected)
+      GoRoute(
+        path: AppRoutes.home,
+        // builder: (context, state) => const SampleListScreen(), // Pointing to SampleList for now
+      ),
+    ],
+  );
+});
+
+============================================================
+
+
+============================================================
+FILE: lib\core\routes\app_routes.dart
+TYPE: Dart Source File
+SIZE: 0.22 KB
+============================================================
+
+// riverpod/lib/core/routes/app_routes.dart
+class AppRoutes {
+  static const String splash = '/';
+  static const String login = '/login';
+  static const String signup = '/signup';
+  static const String home = '/home';
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\services\branch_service.dart
+TYPE: Dart Source File
+SIZE: 0.45 KB
+============================================================
+
+// riverpod/lib/core/services/branch_service.dart
+import 'package:flutter_branch_sdk/flutter_branch_sdk.dart';
+import 'package:riverpod/core/config/env.dart';
+
+class BranchService {
+  static BranchService? _instance;
+  static BranchService get instance => _instance ??= BranchService._();
+
+  BranchService._();
+
+  static Future<void> initialize() async {
+    FlutterBranchSdk.initSession();
+    FlutterBranchSdk.setIdentity(Env.branchKey);
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\services\firebase_service.dart
+TYPE: Dart Source File
+SIZE: 0.66 KB
+============================================================
+
+// riverpod/lib/core/services/firebase_service.dart
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+
+class FirebaseService {
+  static FirebaseService? _instance;
+  static FirebaseService get instance => _instance ??= FirebaseService._();
+
+  FirebaseService._();
+
+  static Future<void> initialize() async {
+    await Firebase.initializeApp();
+    await FirebaseMessaging.instance.requestPermission();
+    FirebaseAnalytics.instance;
+    FirebaseCrashlytics.instance;
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\services\local_auth_service.dart
+TYPE: Dart Source File
+SIZE: 0.45 KB
+============================================================
+
+// riverpod/lib/core/services/local_auth_service.dart
+import 'package:local_auth/local_auth.dart';
+
+class LocalAuthService {
+  final LocalAuthentication _auth = LocalAuthentication();
+
+  Future<bool> authenticate() async {
+    try {
+      return await _auth.authenticate(
+        localizedReason: 'Authenticate to access',
+        options: const AuthenticationOptions(biometricOnly: true),
+      );
+    } catch (e) {
+      return false;
+    }
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\services\storage_service.dart
+TYPE: Dart Source File
+SIZE: 0.47 KB
+============================================================
+
+// riverpod/lib/core/services/storage_service.dart
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
+class StorageService {
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+
+  Future<void> write(String key, String value) async => await _storage.write(key: key, value: value);
+  Future<String?> read(String key) async => await _storage.read(key: key);
+  Future<void> delete(String key) async => await _storage.delete(key: key);
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\services\supabase_service.dart
+TYPE: Dart Source File
+SIZE: 0.55 KB
+============================================================
+
+// riverpod/lib/core/services/supabase_service.dart
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:riverpod/core/config/supabase_config.dart';
+
+class SupabaseService {
+  static SupabaseService? _instance;
+  static SupabaseService get instance => _instance ??= SupabaseService._();
+
+  SupabaseService._();
+
+  static Future<void> initialize() async {
+    await Supabase.initialize(
+      url: SupabaseConfig.url,
+      anonKey: SupabaseConfig.anonKey,
+    );
+  }
+
+  SupabaseClient get client => Supabase.instance.client;
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\session\auth_guard.dart
+TYPE: Dart Source File
+SIZE: 0.46 KB
+============================================================
+
+// riverpod/lib/core/session/auth_guard.dart
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:riverpod/core/bootstrap/dependency_injection.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+String? authGuard(BuildContext context, GoRouterState state, WidgetRef ref) {
+  final session = ref.read(sessionManagerProvider);
+  if (!session.isLoggedIn) {
+    return '/login';
+  }
+  return null;
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\session\session_manager.dart
+TYPE: Dart Source File
+SIZE: 0.71 KB
+============================================================
+
+// riverpod/lib/core/session/session_manager.dart
+import 'package:flutter/material.dart';
+import 'package:riverpod/core/services/supabase_service.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+
+// Extend ChangeNotifier!
+class SessionManager extends ChangeNotifier {
+  final Ref ref;
+
+  SessionManager(this.ref) {
+    // Listen to Supabase auth changes
+    SupabaseService.instance.client.auth.onAuthStateChange.listen((data) {
+      // Notify the router whenever Auth state changes (login/logout)
+      notifyListeners();
+    });
+  }
+
+  bool get isLoggedIn =>
+      SupabaseService.instance.client.auth.currentUser != null;
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\theme\app_theme.dart
+TYPE: Dart Source File
+SIZE: 0.21 KB
+============================================================
+
+// riverpod/lib/core/theme/app_theme.dart
+import 'package:flutter/material.dart';
+
+class AppTheme {
+  static final ThemeData light = ThemeData.light();
+  static final ThemeData dark = ThemeData.dark();
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\core\utils\logger.dart
+TYPE: Dart Source File
+SIZE: 0.10 KB
+============================================================
+
+// riverpod/lib/core/utils/logger.dart
+import 'package:logger/logger.dart';
+
+final logger = Logger();
+
+============================================================
+
+
+============================================================
+FILE: lib\domain\entities\sample_entity.dart
+TYPE: Dart Source File
+SIZE: 0.13 KB
+============================================================
+
+// riverpod/lib/domain/entities/sample_entity.dart
+class SampleEntity {
+  final String id;
+  SampleEntity({required this.id});
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\domain\entities\user_entity.dart
+TYPE: Dart Source File
+SIZE: 0.17 KB
+============================================================
+
+// riverpod/lib/domain/entities/user_entity.dart
+class UserEntity {
+  final String id;
+  final String email;
+
+  UserEntity({required this.id, required this.email});
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\domain\repositories\auth_repository.dart
+TYPE: Dart Source File
+SIZE: 0.22 KB
+============================================================
+
+// riverpod/lib/domain/repositories/auth_repository.dart
+abstract class AuthRepository {
+  Future<void> login(String email, String password);
+  Future<void> signup(String email, String password);
+  Future<void> logout();
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\domain\repositories\sample_repository.dart
+TYPE: Dart Source File
+SIZE: 0.12 KB
+============================================================
+
+// riverpod/lib/domain/repositories/sample_repository.dart
+abstract class SampleRepository {
+  // Define methods
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\domain\usecases\auth\login_usecase.dart
+TYPE: Dart Source File
+SIZE: 0.31 KB
+============================================================
+
+// riverpod/lib/domain/usecases/auth/login_usecase.dart
+import 'package:riverpod/domain/repositories/auth_repository.dart';
+
+class LoginUsecase {
+  final AuthRepository repository;
+  LoginUsecase(this.repository);
+
+  Future<void> call(String email, String password) => repository.login(email, password);
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\domain\usecases\auth\logout_usecase.dart
+TYPE: Dart Source File
+SIZE: 0.27 KB
+============================================================
+
+// riverpod/lib/domain/usecases/auth/logout_usecase.dart
+import 'package:riverpod/domain/repositories/auth_repository.dart';
+
+class LogoutUsecase {
+  final AuthRepository repository;
+  LogoutUsecase(this.repository);
+
+  Future<void> call() => repository.logout();
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\domain\usecases\auth\signup_usecase.dart
+TYPE: Dart Source File
+SIZE: 0.31 KB
+============================================================
+
+// riverpod/lib/domain/usecases/auth/signup_usecase.dart
+import 'package:riverpod/domain/repositories/auth_repository.dart';
+
+class SignupUsecase {
+  final AuthRepository repository;
+  SignupUsecase(this.repository);
+
+  Future<void> call(String email, String password) => repository.signup(email, password);
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\domain\usecases\sample\sample_usecase.dart
+TYPE: Dart Source File
+SIZE: 0.10 KB
+============================================================
+
+// riverpod/lib/domain/usecases/sample/sample_usecase.dart
+class SampleUsecase {
+  // Template
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\auth\model\auth_form_model.dart
+TYPE: Dart Source File
+SIZE: 0.38 KB
+============================================================
+
+// riverpod/lib/features/auth/models/auth_form_model.dart
+class AuthFormModel {
+  final String email;
+  final String password;
+
+  const AuthFormModel({this.email = '', this.password = ''});
+
+  AuthFormModel copyWith({String? email, String? password}) {
+    return AuthFormModel(
+      email: email ?? this.email,
+      password: password ?? this.password,
+    );
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\auth\providers\auth_provider.dart
+TYPE: Dart Source File
+SIZE: 0.26 KB
+============================================================
+
+// riverpod/lib/features/auth/providers/auth_provider.dart
+import 'package:riverpod/data/repositories/auth_repository_impl.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final authRepositoryProvider = Provider((ref) => AuthRepositoryImpl());
+
+============================================================
+
+
+============================================================
+FILE: lib\features\auth\screen\login_screen.dart
+TYPE: Dart Source File
+SIZE: 0.82 KB
+============================================================
+
+// riverpod/lib/features/auth/screens/login_screen.dart
+import 'package:flutter/material.dart';
+import 'package:riverpod/features/auth/widgets/auth_text_field.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod/features/auth/providers/auth_notifier.dart';
+
+class LoginScreen extends ConsumerWidget {
+  const LoginScreen({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return Scaffold(
+      body: Column(
+        children: [
+          const AuthTextField(hint: 'Email'),
+          const AuthTextField(hint: 'Password'),
+          ElevatedButton(
+            onPressed: () => ref.read(authNotifierProvider.notifier).login('test@test.com', 'password'),
+            child: const Text('Login'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\auth\screen\signup_screen.dart
+TYPE: Dart Source File
+SIZE: 0.31 KB
+============================================================
+
+// riverpod/lib/features/auth/screens/signup_screen.dart
+import 'package:flutter/material.dart';
+
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(body: Center(child: Text('Signup Screen')));
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\auth\screen\splash_screen.dart
+TYPE: Dart Source File
+SIZE: 0.72 KB
+============================================================
+
+// riverpod/lib/features/auth/screens/splash_screen.dart
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:riverpod/core/bootstrap/dependency_injection.dart';
+import 'package:riverpod/core/session/session_manager.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+class SplashScreen extends ConsumerWidget {
+  const SplashScreen({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final session = ref.watch(sessionManagerProvider);
+    Future.delayed(const Duration(seconds: 2), () {
+      context.go(session.isLoggedIn ? '/home' : '/login');
+    });
+
+    return const Scaffold(body: Center(child: Text('Splash')));
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\auth\screen\verify_email_screen.dart
+TYPE: Dart Source File
+SIZE: 0.32 KB
+============================================================
+
+// riverpod/lib/features/auth/screens/verify_email_screen.dart
+import 'package:flutter/material.dart';
+
+class VerifyEmailScreen extends StatelessWidget {
+  const VerifyEmailScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(body: Center(child: Text('Verify Email')));
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\auth\widgets\auth_text_field.dart
+TYPE: Dart Source File
+SIZE: 0.35 KB
+============================================================
+
+// riverpod/lib/features/auth/widgets/auth_text_field.dart
+import 'package:flutter/material.dart';
+
+class AuthTextField extends StatelessWidget {
+  final String hint;
+  const AuthTextField({super.key, required this.hint});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(decoration: InputDecoration(hintText: hint));
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\auth\widgets\social_login_button.dart
+TYPE: Dart Source File
+SIZE: 0.33 KB
+============================================================
+
+// riverpod/lib/features/auth/widgets/social_login_button.dart
+import 'package:flutter/material.dart';
+
+class SocialLoginButton extends StatelessWidget {
+  const SocialLoginButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(onPressed: () {}, child: const Text('Social Login'));
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\realtime_example\providers\realtime_notifier.dart
+TYPE: Dart Source File
+SIZE: 0.25 KB
+============================================================
+
+// riverpod/lib/features/realtime_example/providers/realtime_notifier.dart
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+class RealtimeNotifier extends StateNotifier<AsyncValue<void>> {
+  RealtimeNotifier() : super(const AsyncData(null));
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\realtime_example\screen\realtime_screen.dart
+TYPE: Dart Source File
+SIZE: 0.33 KB
+============================================================
+
+// riverpod/lib/features/realtime_example/screens/realtime_screen.dart
+import 'package:flutter/material.dart';
+
+class RealtimeScreen extends StatelessWidget {
+  const RealtimeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(body: Center(child: Text('Realtime Example')));
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\sample_crud\model\sample_model.dart
+TYPE: Dart Source File
+SIZE: 0.13 KB
+============================================================
+
+// riverpod/lib/features/sample_crud/models/sample_model.dart
+class SampleModel {
+  final String title;
+  SampleModel(this.title);
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\sample_crud\providers\sample_notifier.dart
+TYPE: Dart Source File
+SIZE: 0.24 KB
+============================================================
+
+// riverpod/lib/features/sample_crud/providers/sample_notifier.dart
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+class SampleNotifier extends StateNotifier<AsyncValue<void>> {
+  SampleNotifier() : super(const AsyncData(null));
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\sample_crud\screen\sample_detail_screen.dart
+TYPE: Dart Source File
+SIZE: 0.33 KB
+============================================================
+
+// riverpod/lib/features/sample_crud/screens/sample_detail_screen.dart
+import 'package:flutter/material.dart';
+
+class SampleDetailScreen extends StatelessWidget {
+  const SampleDetailScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(body: Center(child: Text('Sample Detail')));
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\sample_crud\screen\sample_form_screen.dart
+TYPE: Dart Source File
+SIZE: 0.33 KB
+============================================================
+
+// riverpod/lib/features/sample_crud/screens/sample_form_screen.dart
+import 'package:flutter/material.dart';
+
+class SampleFormScreen extends StatelessWidget {
+  const SampleFormScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(body: Center(child: Text('Sample Form')));
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\sample_crud\screen\sample_list_screen.dart
+TYPE: Dart Source File
+SIZE: 0.33 KB
+============================================================
+
+// riverpod/lib/features/sample_crud/screens/sample_list_screen.dart
+import 'package:flutter/material.dart';
+
+class SampleListScreen extends StatelessWidget {
+  const SampleListScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(body: Center(child: Text('Sample List')));
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\sample_crud\widgets\sample_list_tile.dart
+TYPE: Dart Source File
+SIZE: 0.30 KB
+============================================================
+
+// riverpod/lib/features/sample_crud/widgets/sample_list_tile.dart
+import 'package:flutter/material.dart';
+
+class SampleListTile extends StatelessWidget {
+  const SampleListTile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const ListTile(title: Text('Sample'));
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\settings\providers\settings_provider.dart
+TYPE: Dart Source File
+SIZE: 0.17 KB
+============================================================
+
+// riverpod/lib/features/settings/providers/settings_provider.dart
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+final settingsProvider = Provider((ref) => {});
+
+============================================================
+
+
+============================================================
+FILE: lib\features\settings\screen\settings_screen.dart
+TYPE: Dart Source File
+SIZE: 0.31 KB
+============================================================
+
+// riverpod/lib/features/settings/screens/settings_screen.dart
+import 'package:flutter/material.dart';
+
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(body: Center(child: Text('Settings')));
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\features\settings\widgets\settings_tile.dart
+TYPE: Dart Source File
+SIZE: 0.29 KB
+============================================================
+
+// riverpod/lib/features/settings/widgets/settings_tile.dart
+import 'package:flutter/material.dart';
+
+class SettingsTile extends StatelessWidget {
+  const SettingsTile({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const ListTile(title: Text('Settings'));
+  }
+}
+
+============================================================
+
+
+============================================================
+FILE: lib\main.dart
+TYPE: Dart Source File
+SIZE: 0.61 KB
+============================================================
+
+// riverpod/lib/main.dart
+import 'package:riverpod/app.dart';
+import 'package:riverpod/core/bootstrap/app_bootstrap.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod/core/config/env.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  const flavorString = String.fromEnvironment('FLAVOR', defaultValue: 'dev');
+  final flavor = AppFlavor.values.firstWhere((e) => e.name == flavorString);
+  await Env.load(flavor);
+  await AppBootstrap.initialize();
+
+  runApp(const ProviderScope(child: App()));
+}
+
+============================================================
+
+
+============================================================
+FILE: pubspec.yaml
+TYPE: Dependencies & Config
+SIZE: 1.16 KB
+============================================================
+
+name: riverpod
+description: Generic reusable Flutter boilerplate
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'      # Fixes the "no lower-bound SDK constraint" error
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.5.1
+  riverpod_annotation: ^2.3.5
+
+  # Routing
+  go_router: ^14.0.0
+
+  # Backend / Infra
+  supabase_flutter: ^2.5.0
+  firebase_core: ^3.0.0
+  firebase_messaging: ^15.0.0
+  firebase_analytics: ^11.0.0
+  firebase_crashlytics: ^4.0.0
+  flutter_branch_sdk: ^7.0.0
+
+  # Auth & Storage
+  local_auth: ^2.2.0
+  flutter_secure_storage: ^9.0.0
+
+  # Utils
+  flutter_dotenv: ^5.1.0
+  connectivity_plus: ^6.0.0
+  intl: ^0.20.2
+  logger: ^2.0.0
+  dio: ^5.4.0  # For ApiClient if you expand it later
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  riverpod_generator: ^2.4.0
+  build_runner: ^2.4.9
+  mocktail: ^1.0.3
+
+flutter:
+  uses-material-design: true
+  generate: true  # For riverpod_generator / intl
+
+  assets:
+    - .env
+    - assets/images/
+    - assets/icons/
+
+============================================================
+
+
+============================================================
+FILE: tools\combine-files.dart
+TYPE: Dart Source File
+SIZE: 4.33 KB
+============================================================
+
+import 'dart:io';
+
+void main() {
+  print('🔄 Combining Flutter project files...');
+
+  final projectRoot = Directory.current.path;
+  final outputFile = '$projectRoot/tools/riverpod_combined.txt';
+
+  // Extensions we care about
+  final allowedExtensions = [
+    '.dart',
+    '.yaml',
+    '.yml',
+    '.json',
+    '.arb',
+    '.md',
+    '.example'
+  ];
+
+  // Folders to skip (platform-specific, builds, etc.)
+  final excludedFolders = [
+    '.dart_tool',
+    'build',
+    'android',
+    'ios',
+    'windows',
+    'linux',
+    'macos',
+    'web',
+    '.idea',
+    '.git',
+    'test',
+    'tests',
+    '__tests__'
+  ];
+
+  // Files to skip
+  final excludedFiles = [
+    '.DS_Store',
+    'pubspec.lock',
+    '.flutter-plugins',
+    '.flutter-plugins-dependencies',
+    '.metadata',
+    '.packages'
+  ];
+
+  // Always include these core files
+  final alwaysIncludeFiles = [
+    'pubspec.yaml',
+    'README.md',
+    '.env.example',
+    'analysis_options.yaml',
+    '.gitignore'
+  ];
+
+  // Collect files
+  final files = <Map<String, String>>[];
+  void collectFiles(Directory dir, String relativeBase) {
+    for (final entity in dir.listSync()) {
+      final relative = entity.path.substring(relativeBase.length + 1);
+
+      if (entity is Directory) {
+        if (excludedFolders.any((f) => relative.startsWith(f))) continue;
+        collectFiles(entity, relativeBase);
+        continue;
+      }
+
+      if (entity is File) {
+        if (excludedFiles.contains(entity.uri.pathSegments.last)) continue;
+
+        final ext = entity.path.substring(entity.path.lastIndexOf('.')).toLowerCase();
+        final filename = entity.uri.pathSegments.last;
+
+        if (allowedExtensions.contains(ext) || alwaysIncludeFiles.contains(filename)) {
+          files.add({'path': entity.path, 'relative': relative});
+        }
+      }
+    }
+  }
+
+  collectFiles(Directory(projectRoot), projectRoot);
+
+  // Sort files
+  files.sort((a, b) => a['relative']!.compareTo(b['relative']!));
+
+  // Generate folder tree
+  String generateTree(String dirPath, String prefix) {
+    var tree = '';
+    final entities = Directory(dirPath).listSync()..sort((a, b) => a.path.compareTo(b.path));
+
+    for (var i = 0; i < entities.length; i++) {
+      final entity = entities[i];
+      final relative = entity.path.substring(projectRoot.length + 1);
+      if (excludedFolders.any((f) => relative.startsWith(f))) continue;
+
+      final isLast = i == entities.length - 1;
+      final connector = isLast ? '└── ' : '├── ';
+      tree += '$prefix$connector${entity.uri.pathSegments.last}\n';
+
+      if (entity is Directory) {
+        tree += generateTree(entity.path, prefix + (isLast ? '    ' : '│   '));
+      }
+    }
+    return tree;
+  }
+
+  // Detect type
+  String detectType(String filepath) {
+    final lower = filepath.toLowerCase();
+    if (lower.contains('/lib/features/')) return 'Feature Module';
+    if (lower.contains('/lib/core/')) return 'Core Layer';
+    if (lower.contains('/lib/data/')) return 'Data Layer';
+    if (lower.contains('/lib/domain/')) return 'Domain Layer';
+    if (lower == 'pubspec.yaml') return 'Dependencies & Config';
+    if (lower.endsWith('.arb')) return 'Localization';
+    if (lower.endsWith('.md')) return 'Documentation';
+    return 'Dart Source File';
+  }
+
+  // Build output content
+  var content = '''
+# M1 Mobile Flutter Boilerplate – Full Code Export
+Generated: ${DateTime.now().toIso8601String()}
+
+=========================================
+📂 PROJECT STRUCTURE
+=========================================
+
+${generateTree(projectRoot, '')}
+
+=========================================
+📦 SOURCE FILES
+=========================================
+
+''';
+
+  for (final file in files) {
+    final fileContent = File(file['path']!).readAsStringSync();
+    final sizeKB = (fileContent.length / 1024).toStringAsFixed(2);
+    final type = detectType(file['relative']!);
+
+    content += '''
+============================================================
+FILE: ${file['relative']}
+TYPE: $type
+SIZE: $sizeKB KB
+============================================================
+
+${fileContent.trim()}
+
+============================================================
+
+
+''';
+  }
+
+  File(outputFile).writeAsStringSync(content);
+  print('✅ Done! Output saved to: $outputFile');
+}
+
+// Run: dart tools/combine-files.dart
+
+============================================================
+
+
+============================================================
+FILE: tools\combine-selected-modules.dart
+TYPE: Dart Source File
+SIZE: 5.23 KB
+============================================================
+
+import 'dart:io';
+import 'package:path/path.dart' as path;  // Required for path utilities
+
+/// combine-selected-modules.dart
+///
+/// Utility script for Flutter projects to combine selected modules/folders
+/// - Collects .dart files from specified folders
+/// - Optional: Automatically includes dependent files by following imports (recursively)
+/// - Supports package:riverpod/... and relative paths
+/// - Output: tools/combined-selected-modules.txt
+///
+/// Run: dart tools/combine-selected-modules.dart
+
+void main() {
+  print('🔄 Combining selected Flutter modules...');
+
+  final projectRoot = Directory.current.path;
+  final libRoot = '$projectRoot/lib';
+  final outputFile = '$projectRoot/tools/combined-selected-modules.txt';
+
+  // Extensions to include
+  const includeExtensions = ['.dart'];
+
+  // Set to false if you want ONLY files directly in the selected folders (no dependencies)
+  const bool includeDependencies = true;
+
+  // -------------------------------
+  // Target folders/modules to combine (relative to lib/)
+  // -------------------------------
+  final selectedModules = [
+    // Examples – add or modify as needed
+    'core/services',       // Only this folder (and dependencies if flag is true)
+    // 'features/auth',
+    // 'core',
+  ];
+
+  // Collected files (to avoid duplicates)
+  final collectedFiles = <String>{};
+
+  // Collect initial .dart files from selected folders
+  void collectInitialFiles() {
+    for (final module in selectedModules) {
+      final dirPath = '$libRoot/$module';
+      final dir = Directory(dirPath);
+
+      if (!dir.existsSync()) {
+        print('⚠️ Path does not exist: lib/$module');
+        continue;
+      }
+
+      dir.listSync(recursive: true).forEach((entity) {
+        if (entity is File) {
+          final ext = entity.path.substring(entity.path.lastIndexOf('.')).toLowerCase();
+          if (includeExtensions.contains(ext)) {
+            collectedFiles.add(entity.absolute.path);
+          }
+        }
+      });
+    }
+  }
+
+  // Extract import paths from file content
+  Set<String> extractImports(String content) {
+    final imports = <String>{};
+    final regExp = RegExp(r'''import\s+['"]([^'"]+)['"]\s*;''');
+
+    for (final match in regExp.allMatches(content)) {
+      final importPath = match.group(1)!;
+
+      // Ignore external/Dart/Flutter packages
+      if (importPath.startsWith('dart:') ||
+          importPath.startsWith('package:flutter/') ||
+          importPath.startsWith('package:riverpod') ||
+          importPath.startsWith('package:go_router') ||
+          importPath.startsWith('package:supabase') ||
+          importPath.startsWith('package:firebase') ||
+          importPath.startsWith('package:') && !importPath.startsWith('package:riverpod/') ||
+          !importPath.startsWith('package:riverpod/') &&
+              !importPath.startsWith('../') &&
+              !importPath.startsWith('./')) {
+        continue;
+      }
+
+      imports.add(importPath);
+    }
+    return imports;
+  }
+
+  // Resolve import path to actual file path
+  String? resolveImport(String importPath, String currentFileDir) {
+    String candidate;
+
+    if (importPath.startsWith('package:riverpod/')) {
+      candidate = '$libRoot/${importPath.substring('package:riverpod/'.length)}';
+    } else {
+      candidate = path.normalize(path.join(currentFileDir, importPath));
+    }
+
+    if (!candidate.endsWith('.dart')) {
+      candidate += '.dart';
+    }
+
+    if (File(candidate).existsSync()) return candidate;
+
+    final indexCandidate = '$candidate/index.dart';
+    if (File(indexCandidate).existsSync()) return indexCandidate;
+
+    return null;
+  }
+
+  // Recursively collect dependencies (only if flag is true)
+  void followImports() {
+    if (!includeDependencies) return;
+
+    final toProcess = List<String>.from(collectedFiles);
+
+    while (toProcess.isNotEmpty) {
+      final currentFile = toProcess.removeAt(0);
+      final currentDir = path.dirname(currentFile);
+
+      final content = File(currentFile).readAsStringSync();
+      final imports = extractImports(content);
+
+      for (final imp in imports) {
+        final resolved = resolveImport(imp, currentDir);
+        if (resolved != null && !collectedFiles.contains(resolved)) {
+          collectedFiles.add(resolved);
+          toProcess.add(resolved);
+        }
+      }
+    }
+  }
+
+  // Main execution
+  collectInitialFiles();
+
+  if (collectedFiles.isEmpty) {
+    print('❌ No files found in selected modules.');
+    return;
+  }
+
+  followImports();
+
+  // Sort and combine
+  final sortedFiles = collectedFiles.toList()..sort();
+
+  var output = '''
+# Combined Selected Flutter Modules
+Generated: ${DateTime.now().toIso8601String()}
+Selected modules: ${selectedModules.join(', ')}
+Include dependencies: $includeDependencies
+
+''';
+
+  for (final filePath in sortedFiles) {
+    final relative = path.relative(filePath, from: projectRoot);
+    print('→ $relative');
+
+    final content = File(filePath).readAsStringSync();
+
+    output += '''
+/* ===== $relative ===== */
+
+$content
+
+''';
+  }
+
+  File(outputFile).writeAsStringSync(output.trim());
+  print('\n✅ Combined ${sortedFiles.length} files → $outputFile');
+}
+
+/// Run: dart tools/combine-selected-modules.dart
+
+============================================================
+
+

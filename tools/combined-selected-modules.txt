@@ -1,0 +1,124 @@
+# Combined Selected Flutter Modules
+Generated: 2026-01-22T12:54:52.488608
+Selected modules: core/services
+Include dependencies: true
+
+/* ===== lib/core/config/env.dart ===== */
+
+// riverpod/lib/core/config/env.dart
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
+class Env {
+  static Future<void> load() async {
+    await dotenv.load(fileName: '.env');
+  }
+
+  static String get supabaseUrl => dotenv.env['SUPABASE_URL'] ?? '';
+  static String get supabaseAnonKey => dotenv.env['SUPABASE_ANON_KEY'] ?? '';
+  static String get branchKey => dotenv.env['BRANCH_IO_KEY'] ?? '';
+}
+
+/* ===== lib/core/config/supabase_config.dart ===== */
+
+// riverpod/lib/core/config/supabase_config.dart
+import 'package:riverpod/core/config/env.dart';
+
+class SupabaseConfig {
+  static String url = Env.supabaseUrl;
+  static String anonKey = Env.supabaseAnonKey;
+}
+
+/* ===== lib/core/services/branch_service.dart ===== */
+
+// riverpod/lib/core/services/branch_service.dart
+import 'package:flutter_branch_sdk/flutter_branch_sdk.dart';
+import 'package:riverpod/core/config/env.dart';
+
+class BranchService {
+  static BranchService? _instance;
+  static BranchService get instance => _instance ??= BranchService._();
+
+  BranchService._();
+
+  static Future<void> initialize() async {
+    FlutterBranchSdk.initSession();
+    FlutterBranchSdk.setIdentity(Env.branchKey);
+  }
+}
+
+/* ===== lib/core/services/firebase_service.dart ===== */
+
+// riverpod/lib/core/services/firebase_service.dart
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+
+class FirebaseService {
+  static FirebaseService? _instance;
+  static FirebaseService get instance => _instance ??= FirebaseService._();
+
+  FirebaseService._();
+
+  static Future<void> initialize() async {
+    await Firebase.initializeApp();
+    await FirebaseMessaging.instance.requestPermission();
+    FirebaseAnalytics.instance;
+    FirebaseCrashlytics.instance;
+  }
+}
+
+/* ===== lib/core/services/local_auth_service.dart ===== */
+
+// riverpod/lib/core/services/local_auth_service.dart
+import 'package:local_auth/local_auth.dart';
+
+class LocalAuthService {
+  final LocalAuthentication _auth = LocalAuthentication();
+
+  Future<bool> authenticate() async {
+    try {
+      return await _auth.authenticate(
+        localizedReason: 'Authenticate to access',
+        options: const AuthenticationOptions(biometricOnly: true),
+      );
+    } catch (e) {
+      return false;
+    }
+  }
+}
+
+/* ===== lib/core/services/storage_service.dart ===== */
+
+// riverpod/lib/core/services/storage_service.dart
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+
+class StorageService {
+  final FlutterSecureStorage _storage = const FlutterSecureStorage();
+
+  Future<void> write(String key, String value) async => await _storage.write(key: key, value: value);
+  Future<String?> read(String key) async => await _storage.read(key: key);
+  Future<void> delete(String key) async => await _storage.delete(key: key);
+}
+
+/* ===== lib/core/services/supabase_service.dart ===== */
+
+// riverpod/lib/core/services/supabase_service.dart
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:riverpod/core/config/supabase_config.dart';
+
+class SupabaseService {
+  static SupabaseService? _instance;
+  static SupabaseService get instance => _instance ??= SupabaseService._();
+
+  SupabaseService._();
+
+  static Future<void> initialize() async {
+    await Supabase.initialize(
+      url: SupabaseConfig.url,
+      anonKey: SupabaseConfig.anonKey,
+    );
+  }
+
+  SupabaseClient get client => Supabase.instance.client;
+}
