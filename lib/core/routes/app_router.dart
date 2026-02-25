@@ -1,14 +1,13 @@
 // riverpod/lib/core/routes/app_router.dart
-import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 // import 'package:riverpod/core/bootstrap/dependency_injection.dart'; // Import for sessionManagerProvider
-import 'package:riverpod/core/routes/app_routes.dart';
 
 // Import your actual screens
 // import 'package:riverpod/features/auth/screens/login_screen.dart';
 // import 'package:riverpod/features/auth/screens/signup_screen.dart';
-import 'package:riverpod/features/auth/splash/screen/splash_screen.dart';
+import 'package:riverpod_app/core/routes/app_routes.dart';
+import 'package:riverpod_app/features/auth/splash/screen/splash_screen.dart';
 // // Note: You may need to create a dummy HomeScreen if you haven't yet, or use SampleListScreen
 // import 'package:riverpod/features/sample_crud/screens/sample_list_screen.dart';
 
