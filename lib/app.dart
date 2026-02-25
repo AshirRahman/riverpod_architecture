@@ -1,10 +1,10 @@
 // riverpod/lib/app.dart
-import 'package:riverpod/core/routes/app_router.dart';
-import 'package:riverpod/core/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:riverpod/core/localization/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_app/core/localization/app_localizations.dart';
+import 'package:riverpod_app/core/routes/app_router.dart';
+import 'package:riverpod_app/core/theme/app_theme.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});

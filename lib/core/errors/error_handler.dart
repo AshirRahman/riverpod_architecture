@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:riverpod/core/errors/failures.dart';
+import 'package:riverpod_app/core/errors/failures.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Failure handleError(dynamic error) {
