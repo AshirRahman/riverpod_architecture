@@ -1,6 +1,6 @@
 // riverpod/lib/core/services/supabase_service.dart
+import 'package:riverpod_app/core/config/supabase_config.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:riverpod/core/config/supabase_config.dart';
 
 class SupabaseService {
   static SupabaseService? _instance;

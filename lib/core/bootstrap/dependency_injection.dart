@@ -1,11 +1,11 @@
 // riverpod/lib/core/bootstrap/dependency_injection.dart
-import 'package:riverpod/core/services/supabase_service.dart';
-import 'package:riverpod/core/services/firebase_service.dart';
-import 'package:riverpod/core/services/branch_service.dart';
-import 'package:riverpod/core/services/local_auth_service.dart';
-import 'package:riverpod/core/services/storage_service.dart';
-import 'package:riverpod/core/session/session_manager.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_app/core/services/branch_service.dart';
+import 'package:riverpod_app/core/services/firebase_service.dart';
+import 'package:riverpod_app/core/services/local_auth_service.dart';
+import 'package:riverpod_app/core/services/storage_service.dart';
+import 'package:riverpod_app/core/services/supabase_service.dart';
+import 'package:riverpod_app/core/session/session_manager.dart';
 
 final supabaseServiceProvider =
     Provider<SupabaseService>((ref) => SupabaseService.instance);
