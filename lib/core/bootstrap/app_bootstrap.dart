@@ -1,7 +1,7 @@
 // riverpod/lib/core/bootstrap/app_bootstrap.dart
-import 'package:riverpod/core/services/firebase_service.dart';
-import 'package:riverpod/core/services/supabase_service.dart';
-import 'package:riverpod/core/services/branch_service.dart';
+import 'package:riverpod_app/core/services/branch_service.dart';
+import 'package:riverpod_app/core/services/firebase_service.dart';
+import 'package:riverpod_app/core/services/supabase_service.dart';
 
 class AppBootstrap {
   static Future<void> initialize() async {
