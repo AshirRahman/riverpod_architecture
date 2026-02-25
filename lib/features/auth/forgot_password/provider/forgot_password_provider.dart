@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod/core/services/supabase_service.dart';
+import 'package:riverpod_app/core/services/supabase_service.dart';
 
 /// FORGOT PASSWORD NOTIFIER PROVIDER
 final forgotPasswordProvider =
